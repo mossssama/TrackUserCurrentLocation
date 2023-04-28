@@ -17,18 +17,13 @@ import com.google.android.gms.location.LocationResult
         }
 
         companion object {
-            const val ACTION_PROCESS_UPDATES =
-                "com.example.locationbroadcastreceiver.action" + ".PROCESS_UPDATES"
+            const val ACTION_PROCESS_UPDATES = "com.example.locationbroadcastreceiver.action" + ".PROCESS_UPDATES"
 
             fun getPendingIntent(context: Context): PendingIntent {
                 val intent = Intent(context, LocationBroadcastReceiver::class.java)
                 intent.action = ACTION_PROCESS_UPDATES
-                return PendingIntent.getBroadcast(
-                    context,
-                    0,
-                    intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT
-                )
+                return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
             }
+
         }
 }
